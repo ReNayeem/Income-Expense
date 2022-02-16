@@ -13,7 +13,7 @@
 
 <body>
     <section class="container">
-        <h1 class="text-center py-5">My Expense Tracker</h1>
+        <h1 class="text-center my-4">My Expense Tracker</h1>
         <div class="row">
             <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center ">
                 <img src="/Image/money-tree.jpg" class="img-fluid h-100" alt="">
@@ -24,27 +24,28 @@
 
                     <!-- income amount input start -->
                     <div class="mt-4 mb-5">
-                        <p><span class="box">Income:</span> <input type="number" id="income-amount-input" name="" id="">
+                        <p><span class="box">Income:</span> <input onkeyup="isInputValid('income-amount-input')"
+                                type="number" id="income-amount-input" name="" id="">
                         </p>
-                        <p id="income-amount-notify">enter valid income amount</p>
                     </div>
                     <!-- income amount input end -->
 
                     <h3 class="mb-3">Monthly Expenses</h3>
 
                     <!-- food expense input start -->
-                    <p class="mt-4"><span class="box">Food:</span> <input type="number" id="food-expense-input" name=""
-                            id=""></p>
+                    <p class="mt-4"><span class="box">Food:</span> <input onkeyup="isInputValid('food-expense-input')"
+                            type="number" id="food-expense-input" name="" id=""></p>
                     <!-- food expense input end -->
 
                     <!-- rent expense input start -->
-                    <p class="my-3"><span class="box">Rent:</span> <input type="number" id="rent-expense-input" name=""
-                            id=""></p>
+                    <p class="my-3"><span class="box">Rent:</span> <input onkeyup="isInputValid('rent-expense-input')"
+                            type="number" id="rent-expense-input" name="" id=""></p>
                     <!-- rent expense input end -->
 
                     <!-- cloth expense input start -->
-                    <p class="my-3"><span class="box">Clothes:</span> <input type="number" id="cloth-expense-input"
-                            name="" id=""></p>
+                    <p class="my-3"><span class="box">Clothes:</span> <input
+                            onkeyup="isInputValid('cloth-expense-input')" type="number" id="cloth-expense-input" name=""
+                            id=""></p>
                     <!-- cloth expense input end -->
 
                     <!-- calculate button start -->
@@ -60,8 +61,8 @@
                     <!-- total balance end -->
 
                     <!-- save input start -->
-                    <p class="mt-4">Save: <input id="save-input" class="income-input" type="number"><span
-                            class="mx-2">%</span>
+                    <p class="mt-4">Save: <input onkeyup="isInputValid('save-input')" id="save-input"
+                            class="income-input" type="number"><span class="mx-2">%</span>
                         <!-- save input end -->
 
                         <!-- save button start -->
@@ -80,6 +81,8 @@
             </div>
         </div>
     </section>
+    <p class="my-3 text-center" id="notify" style="display: none;color: red;">❌ Please enter valid value</p>
+
     <!-- <script src="/JavaScript/script.js"></script> -->
     <script src="/JavaScript/functional-script.js"></script>
 </body>

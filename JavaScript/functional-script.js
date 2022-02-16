@@ -1,7 +1,35 @@
+function isInputValid(inputId) {
+    const checkInputValue = document.getElementById(inputId)
+    const checkInputValueLength = checkInputValue.value.toString().length
+    const notifyId = document.getElementById('notify')
+    if (checkInputValueLength == 0) {
+        notifyId.style.display = 'block';
+
+
+    } else {
+        if (parseInt(checkInputValue.value) < 0) {
+            notifyId.style.display = 'block';
+        } else {
+            notifyId.style.display = 'none';
+        }
+    }
+}
+
+
+
 // input values start
 function getInputValue(inputId) {
     const inputField = document.getElementById(inputId)
     const newInput = inputField.value
+    const convertedNewInput = parseFloat(newInput)
+    const inputNotify = document.getElementById('income-amount-notify')
+    // if (convertedNewInput < -1) {
+    //     inputNotify.style.display = 'block'
+    // }
+    // else {
+    //     inputNotify.style.display = 'none'
+    //     return newInput
+    // }
     return newInput
 }
 // input value end

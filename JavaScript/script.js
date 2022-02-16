@@ -33,17 +33,22 @@ document.getElementById('calculate-button').addEventListener('click', function (
     totalBalance.innerText = newTotalBalance
     // total balance end
 
+    // clear input value 
+    // incomeAmountInput.value = ''
+})
+// calculate button end
+
+
+// save button start
+document.getElementById('save-button').addEventListener('click', function () {
     // save input start
     const saveInput = document.getElementById('save-input')
     const saveInputValue = saveInput.value
     // save input end
 
     // total balance start
-    // const totalBalance = document.getElementById('total-balance')
-    // const newTotalBalance = parseFloat(incomeAmountValue) - parseFloat(newTotalExpense)
-    // totalBalance.innerText = newTotalBalance
+    const totalBalance = document.getElementById('total-balance')
+    const newTotalBalance = parseFloat(incomeAmountValue) - parseFloat(newTotalExpense)
+    totalBalance.innerText = newTotalBalance
     // total balance end
-
-    // clear input value 
-    // incomeAmountInput.value = ''
 })
