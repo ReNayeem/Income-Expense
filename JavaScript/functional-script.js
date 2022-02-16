@@ -1,35 +1,7 @@
-function isInputValid(inputId) {
-    const checkInputValue = document.getElementById(inputId)
-    const checkInputValueLength = checkInputValue.value.toString().length
-    const notifyId = document.getElementById('notify')
-    if (checkInputValueLength == 0) {
-        notifyId.style.display = 'block';
-
-
-    } else {
-        if (parseInt(checkInputValue.value) < 0) {
-            notifyId.style.display = 'block';
-        } else {
-            notifyId.style.display = 'none';
-        }
-    }
-}
-
-
-
 // input values start
 function getInputValue(inputId) {
     const inputField = document.getElementById(inputId)
     const newInput = inputField.value
-    const convertedNewInput = parseFloat(newInput)
-    const inputNotify = document.getElementById('income-amount-notify')
-    // if (convertedNewInput < -1) {
-    //     inputNotify.style.display = 'block'
-    // }
-    // else {
-    //     inputNotify.style.display = 'none'
-    //     return newInput
-    // }
     return newInput
 }
 // input value end
@@ -55,17 +27,31 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const clothExpenseValue = getInputValue('cloth-expense-input')
     // cloth expense input end
 
-    // total expense start
-    const totalExpense = document.getElementById('total-expense')
-    const newTotalExpense = parseFloat(foodExpenseValue) + parseFloat(rentExpenseValue) + parseFloat(clothExpenseValue)
-    totalExpense.innerText = newTotalExpense
-    // total expense end
+    if (parseFloat(incomeAmountValue) < 0 || parseFloat(foodExpenseValue) < 0 || parseFloat(rentExpenseValue) < 0 || parseFloat(clothExpenseValue) < 0) {
+        alert('Please input valid value')
+    }
+    else {
+        // total expense start
+        const totalExpense = document.getElementById('total-expense')
+        const newTotalExpense = parseFloat(foodExpenseValue) + parseFloat(rentExpenseValue) + parseFloat(clothExpenseValue)
+        if (incomeAmountValue >= newTotalExpense) {
+            totalExpense.innerText = newTotalExpense
+        }
+        else {
+            alert('Please input valid value')
+        }
+        // total expense end
 
-    // total balance start
-    const totalBalance = document.getElementById('total-balance')
-    const newTotalBalance = parseFloat(incomeAmountValue) - parseFloat(newTotalExpense)
-    totalBalance.innerText = newTotalBalance
-    // total balance end
+        // total balance start
+        const totalBalance = document.getElementById('total-balance')
+        const newTotalBalance = parseFloat(incomeAmountValue) - parseFloat(newTotalExpense)
+        if (newTotalBalance >= 0) {
+            totalBalance.innerText = newTotalBalance
+        }
+        // total balance end
+    }
+
+
 })
 // calculate button end
 
@@ -81,19 +67,49 @@ document.getElementById('save-button').addEventListener('click', function () {
     const incomeAmountValue = getInputValue('income-amount-input')
     // income amount input end
 
-    // save amount start
-    const saveAmount = document.getElementById('save-amount')
-    const newSaveBalance = (parseFloat(saveInputValue) * parseFloat(incomeAmountValue)) / 100
-    saveAmount.innerText = newSaveBalance
-    // save amount end
+    if (parseFloat(saveInputValue) < 0) {
+        alert('Please input valid value')
+    }
+    else {
+        // total balance start
+        const totalBalance = document.getElementById('total-balance')
+        // total balance end
 
-    // total balance start
-    const totalBalance = document.getElementById('total-balance')
-    // total balance end
+        // save amount start
+        const saveAmount = document.getElementById('save-amount')
+        const newSaveBalance = (parseFloat(saveInputValue) * parseFloat(incomeAmountValue)) / 100
+        if (parseFloat(totalBalance.innerText) >= newSaveBalance) {
+            saveAmount.innerText = newSaveBalance
+        }
+        else {
+            alert('Please input valid value')
+        }
+        // save amount end
 
-    // remaining balance start
-    const remainingBalance = document.getElementById('remaining-balance')
-    const newRemainingBalance = parseFloat(totalBalance.innerText) - parseFloat(saveAmount.innerText)
-    remainingBalance.innerText = newRemainingBalance
-    // remaining balance end
+        // remaining balance start
+        const remainingBalance = document.getElementById('remaining-balance')
+        const newRemainingBalance = parseFloat(totalBalance.innerText) - parseFloat(saveAmount.innerText)
+        remainingBalance.innerText = newRemainingBalance
+        // remaining balance end
+    }
 })
+
+
+// error notify start
+function isInputValid(inputId) {
+    const checkInputValue = document.getElementById(inputId)
+    const checkInputValueLength = checkInputValue.value.toString().length
+    const notifyId = document.getElementById('notify')
+    if (checkInputValueLength == 0) {
+        notifyId.style.display = 'block';
+
+
+    } else {
+        if (parseInt(checkInputValue.value) < 0) {
+            notifyId.style.display = 'block';
+        } else {
+            notifyId.style.display = 'none';
+        }
+    }
+}
+// error notify end
