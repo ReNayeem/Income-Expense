@@ -58,4 +58,14 @@ document.getElementById('save-button').addEventListener('click', function () {
     const newSaveBalance = (parseFloat(saveInputValue) * parseFloat(incomeAmountValue)) / 100
     saveAmount.innerText = newSaveBalance
     // save amount end
+
+    // total balance start
+    const totalBalance = document.getElementById('total-balance')
+    // total balance end
+
+    // remaining balance start
+    const remainingBalance = document.getElementById('remaining-balance')
+    const newRemainingBalance = parseFloat(totalBalance.innerText) - parseFloat(saveAmount.innerText)
+    remainingBalance.innerText = newRemainingBalance
+    // remaining balance end
 })
