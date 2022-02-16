@@ -21,6 +21,18 @@ document.getElementById('calculate-button').addEventListener('click', function (
     const clothExpenseValue = clothExpenseInput.value
     // cloth expense input end
 
+    // total expense start
+    const totalExpense = document.getElementById('total-expense')
+    const newTotalExpense = parseFloat(foodExpenseValue) + parseFloat(rentExpenseValue) + parseFloat(clothExpenseValue)
+    totalExpense.innerText = newTotalExpense
+    // total expense end
+
+    // total balance start
+    const totalBalance = document.getElementById('total-balance')
+    const newTotalBalance = parseFloat(incomeAmountValue) - parseFloat(newTotalExpense)
+    totalBalance.innerText = newTotalBalance
+    // total balance end
+
     // clear input value 
     // incomeAmountInput.value = ''
 })
