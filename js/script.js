@@ -25,7 +25,6 @@ document.getElementById('calculate-button').addEventListener('click', function (
     if (incomeAmountValue != parseFloat(incomeAmountValue) || foodExpenseValue != parseFloat(foodExpenseValue) || rentExpenseValue != parseFloat(rentExpenseValue) || clothExpenseValue != parseFloat(clothExpenseValue)) {
         notifyValidValue.style.display = 'block'
         totalExpenseNotify.style.display = 'none'
-        totalExpenseNotify.style.display = 'none'
     }
     // notify error end
 
