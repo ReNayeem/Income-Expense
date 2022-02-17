@@ -32,15 +32,18 @@ document.getElementById('calculate-button').addEventListener('click', function (
         // total expense start
         const totalExpense = document.getElementById('total-expense')
         const newTotalExpense = parseFloat(foodExpenseValue) + parseFloat(rentExpenseValue) + parseFloat(clothExpenseValue)
-        if (incomeAmountValue >= newTotalExpense) {
+        if (incomeAmountValue >= newTotalExpense && parseFloat(foodExpenseValue) >= 0 && parseFloat(rentExpenseValue) >= 0 && parseFloat(clothExpenseValue) >= 0) {
             totalExpense.innerText = newTotalExpense
 
             // notify total expense error start
             totalExpenseNotify.style.display = 'none'
             notifyValidValue.style.display = 'none'
         }
-        else {
+        else if (newTotalExpense >= incomeAmountValue) {
             totalExpenseNotify.style.display = 'block'
+        }
+        else {
+            totalExpenseNotify.style.display = 'none'
             notifyValidValue.style.display = 'none'
             totalExpense.innerText = ""
         }
@@ -50,7 +53,7 @@ document.getElementById('calculate-button').addEventListener('click', function (
         // total balance start
         const totalBalance = document.getElementById('total-balance')
         const newTotalBalance = parseFloat(incomeAmountValue) - parseFloat(newTotalExpense)
-        if (newTotalBalance >= 0) {
+        if (newTotalBalance >= 0 && totalExpense.innerText != "") {
             totalBalance.innerText = newTotalBalance
         }
         else {
@@ -90,15 +93,18 @@ document.getElementById('save-button').addEventListener('click', function () {
         // save amount start
         const saveAmount = document.getElementById('save-amount')
         const newSaveBalance = (parseFloat(saveInputValue) * parseFloat(incomeAmountValue)) / 100
-        if (parseFloat(totalBalance.innerText) >= newSaveBalance) {
+        if (parseFloat(totalBalance.innerText) >= newSaveBalance && newSaveBalance >= 0) {
             saveAmount.innerText = newSaveBalance
 
             // notify total save error start
             notifyTotalSave.style.display = 'none'
             notifySaveValidValue.style.display = 'none'
         }
-        else {
+        else if (newSaveBalance >= parseFloat(totalBalance.innerText)) {
             notifyTotalSave.style.display = 'block'
+        }
+        else {
+            notifyTotalSave.style.display = 'none'
             notifySaveValidValue.style.display = 'none'
             saveAmount.innerText = ""
         }
