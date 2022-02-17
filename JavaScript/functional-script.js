@@ -127,10 +127,6 @@ function isInputValidAnother(inputId, notifyId, notifyIdForString) {
             notifyErrorString.style.display = 'block'
             notifyError.style.display = 'none'
         }
-        else if (showTyping.value == none) {
-            notifyError.style.display = 'none'
-            notifyErrorString.style.display = 'none'
-        }
         else {
             notifyError.style.display = 'none'
             notifyErrorString.style.display = 'none'
