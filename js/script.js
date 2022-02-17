@@ -102,6 +102,7 @@ document.getElementById('save-button').addEventListener('click', function () {
             notifyTotalSave.style.display = 'block'
             notifySaveValidValue.style.display = 'none'
             saveAmount.innerText = 0
+            remainingBalance.innerText = 0
         }
         // notify total save error end
         // save amount end
