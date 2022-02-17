@@ -34,11 +34,13 @@ document.getElementById('calculate-button').addEventListener('click', function (
         // total expense start
         const totalExpense = document.getElementById('total-expense')
         const newTotalExpense = parseFloat(foodExpenseValue) + parseFloat(rentExpenseValue) + parseFloat(clothExpenseValue)
+        const totalExpenseNotify = document.getElementById('notify-total-expense')
         if (incomeAmountValue >= newTotalExpense) {
             totalExpense.innerText = newTotalExpense
+            totalExpenseNotify.style.display = 'none'
         }
         else {
-            alert('Please input valid value')
+            totalExpenseNotify.style.display = 'block'
         }
         // total expense end
 
