@@ -11,38 +11,41 @@ function getInputValue(inputId) {
 // calculate button start
 document.getElementById('calculate-button').addEventListener('click', function () {
 
-    // income amount input start
+    // input values start
     const incomeAmountValue = getInputValue('income-amount-input')
-    // income amount input end
-
-    // food expense input start
     const foodExpenseValue = getInputValue('food-expense-input')
-    // food expense input end
-
-    // rent expense input start
     const rentExpenseValue = getInputValue('rent-expense-input')
-    // rent expense input end
-
-    // cloth expense input start
     const clothExpenseValue = getInputValue('cloth-expense-input')
-    // cloth expense input end
+    // input values end
 
-    if (parseFloat(incomeAmountValue) < 0 || parseFloat(foodExpenseValue) < 0 || parseFloat(rentExpenseValue) < 0 || parseFloat(clothExpenseValue) < 0) {
-        alert('Please input valid value')
+    // notify error start
+    const notifyValidValue = document.getElementById('notify-valid-value')
+    const totalExpenseNotify = document.getElementById('notify-total-expense')
+
+    if (incomeAmountValue != parseFloat(incomeAmountValue) || foodExpenseValue != parseFloat(foodExpenseValue) || rentExpenseValue != parseFloat(rentExpenseValue) || clothExpenseValue != parseFloat(clothExpenseValue)) {
+        notifyValidValue.style.display = 'block'
+        totalExpenseNotify.style.display = 'none'
+        totalExpenseNotify.style.display = 'none'
     }
+    // notify error end
+
     else {
         // total expense start
         const totalExpense = document.getElementById('total-expense')
         const newTotalExpense = parseFloat(foodExpenseValue) + parseFloat(rentExpenseValue) + parseFloat(clothExpenseValue)
-        const totalExpenseNotify = document.getElementById('notify-total-expense')
         if (incomeAmountValue >= newTotalExpense) {
             totalExpense.innerText = newTotalExpense
+
+            // notify total expense error start
             totalExpenseNotify.style.display = 'none'
+            notifyValidValue.style.display = 'none'
         }
         else {
             totalExpenseNotify.style.display = 'block'
+            notifyValidValue.style.display = 'none'
             totalExpense.innerText = 0
         }
+        // notify total expense error end
         // total expense end
 
         // total balance start
@@ -56,8 +59,6 @@ document.getElementById('calculate-button').addEventListener('click', function (
         }
         // total balance end
     }
-
-
 })
 // calculate button end
 
@@ -65,16 +66,18 @@ document.getElementById('calculate-button').addEventListener('click', function (
 
 // save button start
 document.getElementById('save-button').addEventListener('click', function () {
-    // save input start
+
+    // input value start
     const saveInputValue = getInputValue('save-input')
-    // save input end
-
-    // income amount input start
     const incomeAmountValue = getInputValue('income-amount-input')
-    // income amount input end
+    // input value input end
 
-    if (parseFloat(saveInputValue) < 0) {
-        alert('Please input valid value')
+    const notifyTotalSave = document.getElementById('notify-total-save')
+    const notifySaveValidValue = document.getElementById('notify-save-valid-value')
+
+    if (saveInputValue != parseFloat(saveInputValue)) {
+        notifySaveValidValue.style.display = 'block'
+        notifyTotalSave.style.display = 'none'
     }
     else {
         // total balance start
@@ -84,13 +87,14 @@ document.getElementById('save-button').addEventListener('click', function () {
         // save amount start
         const saveAmount = document.getElementById('save-amount')
         const newSaveBalance = (parseFloat(saveInputValue) * parseFloat(incomeAmountValue)) / 100
-        const totalSaveNotify = document.getElementById('notify-total-save')
         if (parseFloat(totalBalance.innerText) >= newSaveBalance) {
             saveAmount.innerText = newSaveBalance
-            totalSaveNotify.style.display = 'none'
+            notifyTotalSave.style.display = 'none'
+            notifySaveValidValue.style.display = 'none'
         }
         else {
-            totalSaveNotify.style.display = 'block'
+            notifyTotalSave.style.display = 'block'
+            notifySaveValidValue.style.display = 'none'
             saveAmount.innerText = 0
         }
         // save amount end
@@ -104,25 +108,8 @@ document.getElementById('save-button').addEventListener('click', function () {
 })
 
 
+
 // error notify start
-function isInputValid(inputId) {
-    const checkInputValue = document.getElementById(inputId)
-    const checkInputValueLength = checkInputValue.value.toString().length
-    const notifyId = document.getElementById('notify')
-    if (checkInputValueLength == 0) {
-        notifyId.style.display = 'block';
-
-
-    } else {
-        if (parseInt(checkInputValue.value) < 0) {
-            notifyId.style.display = 'block';
-        } else {
-            notifyId.style.display = 'none';
-        }
-    }
-}
-
-
 function isInputValidAnother(inputId, notifyId, notifyIdForString) {
     document.getElementById(inputId).addEventListener('keyup', function () {
         const showTyping = document.getElementById(inputId);
