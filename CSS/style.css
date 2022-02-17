@@ -27,10 +27,6 @@ input{
   text-align: center;
 }
 
-button{
-  border-radius: 10px !important;
-}
-
 section {
   height: fit-content;
 }

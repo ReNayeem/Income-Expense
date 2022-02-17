@@ -72,6 +72,8 @@ document.getElementById('save-button').addEventListener('click', function () {
     const incomeAmountValue = getInputValue('income-amount-input')
     // input value input end
 
+
+    // notify total save error start
     const notifyTotalSave = document.getElementById('notify-total-save')
     const notifySaveValidValue = document.getElementById('notify-save-valid-value')
 
@@ -79,6 +81,8 @@ document.getElementById('save-button').addEventListener('click', function () {
         notifySaveValidValue.style.display = 'block'
         notifyTotalSave.style.display = 'none'
     }
+    // notify total save error end
+
     else {
         // total balance start
         const totalBalance = document.getElementById('total-balance')
@@ -89,6 +93,8 @@ document.getElementById('save-button').addEventListener('click', function () {
         const newSaveBalance = (parseFloat(saveInputValue) * parseFloat(incomeAmountValue)) / 100
         if (parseFloat(totalBalance.innerText) >= newSaveBalance) {
             saveAmount.innerText = newSaveBalance
+
+            // notify total save error start
             notifyTotalSave.style.display = 'none'
             notifySaveValidValue.style.display = 'none'
         }
@@ -97,6 +103,7 @@ document.getElementById('save-button').addEventListener('click', function () {
             notifySaveValidValue.style.display = 'none'
             saveAmount.innerText = 0
         }
+        // notify total save error end
         // save amount end
 
         // remaining balance start

@@ -28,80 +28,133 @@
                         <p><span class="input-name">Income:</span> <input type="number" id="income-amount-input" name=""
                                 id="">
                         </p>
-                        <p id="notify-amount" style="display: none;">Please input positive number of <span
-                                class="text-danger">income</span> value</p>
+                        <!-- error notify start -->
+                        <p id="notify-amount" style="display: none;">Please input <span
+                                class="text-danger">positive</span> number of <span class="text-danger">income</span>
+                            value</p>
                         <p id="notify-amount-string" style="display: none;">Please input number value of <span
-                                class="text-danger">income</span></p>
+                                class="text-danger">income</span> input field</p>
+                        <!-- error notify end -->
                     </div>
                     <!-- income amount input end -->
 
+
+
+
                     <h3 class="mb-3 font-change">Expenses</h3>
+
+
+
 
                     <!-- food expense input start -->
                     <p class="mt-4"><span class="input-name">Food:</span> <input type="number" id="food-expense-input"
                             name="" id=""></p>
-                    <p id="notify-food" style="display: none;">Please input positive number of <span
-                            class="text-danger">food</span> expense</p>
+                    <!-- error notify start -->
+                    <p id="notify-food" style="display: none;">Please input <span class="text-danger">positive</span>
+                        number of <span class="text-danger">food</span> expense</p>
                     <p id="notify-food-string" style="display: none;">Please input number value of <span
                             class="text-danger">food</span> expense</p>
+                    <!-- error notify end -->
                     <!-- food expense input end -->
+
+
+
 
                     <!-- rent expense input start -->
                     <p class="my-3"><span class="input-name">Rent:</span> <input type="number" id="rent-expense-input"
                             name="" id=""></p>
-                    <p id="notify-rent" style="display: none;">Please input positive number of <span
-                            class="text-danger">rent</span> expense</p>
+                    <!-- error notify start -->
+                    <p id="notify-rent" style="display: none;">Please input <span class="text-danger">positive</span>
+                        number of <span class="text-danger">rent</span> expense</p>
                     <p id="notify-rent-string" style="display: none;">Please input number value of <span
                             class="text-danger">rent</span> expense</p>
+                    <!-- error notify end -->
                     <!-- rent expense input end -->
+
+
+
 
                     <!-- cloth expense input start -->
                     <p class="my-3"><span class="input-name">Clothes:</span> <input type="number"
                             id="cloth-expense-input" name="" id=""></p>
-                    <p id="notify-cloth" style="display: none;">Please input positive number of <span
-                            class="text-danger">clothes</span> expense</p>
+                    <!-- error notify start -->
+                    <p id="notify-cloth" style="display: none;">Please input <span class="text-danger">positive</span>
+                        number of <span class="text-danger">clothes</span> expense</p>
                     <p id="notify-cloth-string" style="display: none;">Please input number value of <span
                             class="text-danger">clothes</span> expense</p>
+                    <!-- error notify end -->
                     <!-- cloth expense input end -->
+
+
+
+
 
                     <!-- calculate button start -->
                     <button id="calculate-button" class="my-3 btn btn-primary">Calculate</button>
+                    <!-- error notify start -->
                     <p id="notify-valid-value" style="display: none;">Please input <span
                             class="text-danger">valid</span> value</p>
+                    <!-- error notify end -->
                     <!-- calculate button end -->
 
+
+
+
+
                     <!-- total expense start -->
+                    <!-- error notify start -->
                     <p id="notify-total-expense" style="display: none;">Your <span class="text-danger">total
-                            expense</span> is more than <span class="text-danger">total income</span> amount</p>
+                            expense</span> is more than <span class="text-danger">income</span> amount</p>
+                    <!-- error notify end -->
                     <p class='font-change'>Total Expenses: <span id="total-expense">0</span></p>
                     <!-- total expense end -->
+
+
+
+
 
                     <!-- total balance start -->
                     <p class="font-change">Balance: <span id="total-balance">0</span></p>
                     <!-- total balance end -->
 
+
+
+
+
                     <!-- save input start -->
                     <div class="mt-4 p-3">
                         <p>Save: <input id="save-input" class="income-input" type="number"><span class="mx-2">%</span>
-                            <!-- save input end -->
 
                             <!-- save button start -->
-                            <button id="save-button" class="btn btn-primary mt-md-0 mt-3">Save</button>
-                        <p id="notify-save" style="display: none;">Please input positive number of <span
-                                class="text-danger">save</span> value</p>
+                            <button id="save-button" class="btn px-4 btn-primary mt-md-0 mt-3">Save</button>
+                            <!-- save button end  -->
+
+                            <!-- error notify start -->
+                        <p id="notify-save" style="display: none;">Please input <span
+                                class="text-danger">positive</span> number of <span class="text-danger">save</span>
+                            value</p>
                         <p id="notify-save-string" style="display: none;">Please input number value of <span
                                 class="text-danger">save</span> input field</p>
                         </p>
                         <p id="notify-total-save" style="display: none;">Your <span class="text-danger">save</span>
                             amount is more than your remaining<span class="text-danger"> balance</span> amount</p>
-                        <p id="notify-save-valid-value" style="display: none;">Please input valid value of <span
-                                class="text-danger">save</span> input field</p>
+                        <p id="notify-save-valid-value" style="display: none;">Please input <span
+                                class="text-danger">valid</span> value</p>
+                        <!-- error notify start -->
                     </div>
-                    <!-- save button end -->
+                    <!-- save input end -->
+
+
+
+
 
                     <!-- save amount start -->
                     <p class="mt-4 font-change">Saving Amount: <span id="save-amount">0</span></p>
                     <!-- save amount end -->
+
+
+
+
 
                     <!-- remaining balance start -->
                     <p class="mb-5 font-change">Remaining Balance: <span id="remaining-balance">0</span></p>
@@ -111,7 +164,7 @@
         </div>
     </section>
 
-    <script src="/JavaScript/functional-script.js"></script>
+    <script src="/JavaScript/script.js"></script>
 </body>
 
 </html>
