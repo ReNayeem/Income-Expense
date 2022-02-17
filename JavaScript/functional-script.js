@@ -112,4 +112,35 @@ function isInputValid(inputId) {
         }
     }
 }
+
+
+function isInputValidAnother(inputId, notifyId, notifyIdForString) {
+    document.getElementById(inputId).addEventListener('keyup', function () {
+        const showTyping = document.getElementById(inputId);
+        const notifyError = document.getElementById(notifyId)
+        const notifyErrorString = document.getElementById(notifyIdForString)
+        if (showTyping.value < 0) {
+            notifyError.style.display = 'block'
+            notifyErrorString.style.display = 'none'
+        }
+        else if (showTyping.value != parseFloat(showTyping.value)) {
+            notifyErrorString.style.display = 'block'
+            notifyError.style.display = 'none'
+        }
+        else if (showTyping.value == none) {
+            notifyError.style.display = 'none'
+            notifyErrorString.style.display = 'none'
+        }
+        else {
+            notifyError.style.display = 'none'
+            notifyErrorString.style.display = 'none'
+        }
+    })
+}
+
+isInputValidAnother('income-amount-input', 'notify-amount', 'notify-amount-string')
+isInputValidAnother('food-expense-input', 'notify-food', 'notify-food-string')
+isInputValidAnother('rent-expense-input', 'notify-rent', 'notify-rent-string')
+isInputValidAnother('cloth-expense-input', 'notify-cloth', 'notify-cloth-string')
+isInputValidAnother('save-input', 'notify-save', 'notify-save-string')
 // error notify end

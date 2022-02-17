@@ -27,6 +27,10 @@
                         <p><span class="box">Income:</span> <input onkeyup="isInputValid('income-amount-input')"
                                 type="number" id="income-amount-input" name="" id="">
                         </p>
+                        <p id="notify-amount" style="display: none;">Please input positive number of <span
+                                class="text-danger">income</span> value</p>
+                        <p id="notify-amount-string" style="display: none;">Please input number <span
+                                class="text-danger">income</span> value</p>
                     </div>
                     <!-- income amount input end -->
 
@@ -35,17 +39,29 @@
                     <!-- food expense input start -->
                     <p class="mt-4"><span class="box">Food:</span> <input onkeyup="isInputValid('food-expense-input')"
                             type="number" id="food-expense-input" name="" id=""></p>
+                    <p id="notify-food" style="display: none;">Please input positive number of <span
+                            class="text-danger">food</span> expense</p>
+                    <p id="notify-food-string" style="display: none;">Please input number value of <span
+                            class="text-danger">food</span> expense</p>
                     <!-- food expense input end -->
 
                     <!-- rent expense input start -->
                     <p class="my-3"><span class="box">Rent:</span> <input onkeyup="isInputValid('rent-expense-input')"
                             type="number" id="rent-expense-input" name="" id=""></p>
+                    <p id="notify-rent" style="display: none;">Please input positive number of <span
+                            class="text-danger">rent</span> expense</p>
+                    <p id="notify-rent-string" style="display: none;">Please input number value of <span
+                            class="text-danger">rent</span> expense</p>
                     <!-- rent expense input end -->
 
                     <!-- cloth expense input start -->
                     <p class="my-3"><span class="box">Clothes:</span> <input
                             onkeyup="isInputValid('cloth-expense-input')" type="number" id="cloth-expense-input" name=""
                             id=""></p>
+                    <p id="notify-cloth" style="display: none;">Please input positive number of <span
+                            class="text-danger">cloth</span> expense</p>
+                    <p id="notify-cloth-string" style="display: none;">Please input number value of <span
+                            class="text-danger">cloth</span> expense</p>
                     <!-- cloth expense input end -->
 
                     <!-- calculate button start -->
@@ -61,13 +77,19 @@
                     <!-- total balance end -->
 
                     <!-- save input start -->
-                    <p class="mt-4 p-3">Save: <input onkeyup="isInputValid('save-input')" id="save-input"
-                            class="income-input" type="number"><span class="mx-2">%</span>
-                        <!-- save input end -->
+                    <div class="mt-4 p-3">
+                        <p>Save: <input onkeyup="isInputValid('save-input')" id="save-input" class="income-input"
+                                type="number"><span class="mx-2">%</span>
+                            <!-- save input end -->
 
-                        <!-- save button start -->
-                        <button id="save-button" class="btn btn-primary mt-md-0 mt-3">Save</button>
-                    </p>
+                            <!-- save button start -->
+                            <button id="save-button" class="btn btn-primary mt-md-0 mt-3">Save</button>
+                        <p id="notify-save" style="display: none;">Please input positive number of <span
+                                class="text-danger">save</span> value</p>
+                        <p id="notify-save-string" style="display: none;">Please input number <span
+                                class="text-danger">save</span> value</p>
+                        </p>
+                    </div>
                     <!-- save button end -->
 
                     <!-- save amount start -->
@@ -81,7 +103,8 @@
             </div>
         </div>
     </section>
-    <p class="my-3 text-center h4 text-danger font-weight-bolds" id="notify" style="display: none;">❌ Please enter valid
+    <p class="my-3 text-center h4 text-danger font-weight-bolds" id="notify" style="display: none;">❌ Please enter
+        valid or positive number
         value</p>
 
     <!-- <script src="/JavaScript/script.js"></script> -->
