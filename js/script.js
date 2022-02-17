@@ -43,7 +43,7 @@ document.getElementById('calculate-button').addEventListener('click', function (
         else {
             totalExpenseNotify.style.display = 'block'
             notifyValidValue.style.display = 'none'
-            totalExpense.innerText = 0
+            totalExpense.innerText = ""
         }
         // notify total expense error end
         // total expense end
@@ -55,7 +55,7 @@ document.getElementById('calculate-button').addEventListener('click', function (
             totalBalance.innerText = newTotalBalance
         }
         else {
-            totalBalance.innerText = 0
+            totalBalance.innerText = ""
         }
         // total balance end
     }
@@ -101,8 +101,7 @@ document.getElementById('save-button').addEventListener('click', function () {
         else {
             notifyTotalSave.style.display = 'block'
             notifySaveValidValue.style.display = 'none'
-            saveAmount.innerText = 0
-            remainingBalance.innerText = 0
+            saveAmount.innerText = ""
         }
         // notify total save error end
         // save amount end
@@ -110,11 +109,16 @@ document.getElementById('save-button').addEventListener('click', function () {
         // remaining balance start
         const remainingBalance = document.getElementById('remaining-balance')
         const newRemainingBalance = parseFloat(totalBalance.innerText) - parseFloat(saveAmount.innerText)
-        remainingBalance.innerText = newRemainingBalance
+        if (saveAmount.innerText == "") {
+            remainingBalance.innerText = ""
+        }
+        else {
+            remainingBalance.innerText = newRemainingBalance
+        }
         // remaining balance end
     }
 })
-// save button end
+// save button start
 
 
 
