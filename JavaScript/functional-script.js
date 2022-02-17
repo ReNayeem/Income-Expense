@@ -41,6 +41,7 @@ document.getElementById('calculate-button').addEventListener('click', function (
         }
         else {
             totalExpenseNotify.style.display = 'block'
+            totalExpense.innerText = 0
         }
         // total expense end
 
@@ -49,6 +50,9 @@ document.getElementById('calculate-button').addEventListener('click', function (
         const newTotalBalance = parseFloat(incomeAmountValue) - parseFloat(newTotalExpense)
         if (newTotalBalance >= 0) {
             totalBalance.innerText = newTotalBalance
+        }
+        else {
+            totalBalance.innerText = 0
         }
         // total balance end
     }
@@ -80,11 +84,14 @@ document.getElementById('save-button').addEventListener('click', function () {
         // save amount start
         const saveAmount = document.getElementById('save-amount')
         const newSaveBalance = (parseFloat(saveInputValue) * parseFloat(incomeAmountValue)) / 100
+        const totalSaveNotify = document.getElementById('notify-total-save')
         if (parseFloat(totalBalance.innerText) >= newSaveBalance) {
             saveAmount.innerText = newSaveBalance
+            totalSaveNotify.style.display = 'none'
         }
         else {
-            alert('Please input valid value')
+            totalSaveNotify.style.display = 'block'
+            saveAmount.innerText = 0
         }
         // save amount end
 
